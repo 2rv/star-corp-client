@@ -1,0 +1,8 @@
+{
+  "CONFIRM": {
+    "TITLE": "Are you sure?",
+    "CONTENT": "This action can be dangerous. Do you agree?",
+    "BUTTON_AGREE": "Agree",
+    "BUTTON_NOT_AGREE": "Close"
+  }
+}

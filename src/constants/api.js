@@ -1,0 +1,15 @@
+export const API = {
+  LOGIN: '/auth/login',
+  SIGNUP: '/auth/signup',
+  RECOVERY_ACCOUNT_UPDATE: ({ key }) => `/auth/reset/${key}`,
+  PGP_CONFIRM: ({ key }) => `/auth/reset/${key}`,
+  RECOVERY_ACCOUNT_RESET: '/auth/reset',
+  UPDATE_PASSWORD: '/auth/settings/password',
+  UPDATE_PASSWORD_WITH_CONFIRM: '/auth/settings/password/confirm',
+  CONFIRM_PASSWORD_UPDATE: ({ key }) => `/auth/settings/password/confirm/${key}`,
+  UPDATE_EMAIL: '/auth/settings/email',
+  UPDATE_PGP: '/auth/settings/pgp',
+  ACCOUNT_INFO: '/auth/account-data',
+  GENERATE_CAPTCHA: '/captcha',
+  ACCOUNT_BALANCE: '/payment/balance',
+};

@@ -1,0 +1,13 @@
+{
+  "FORM": {
+    "TITLE": "Авторизация",
+    "LOGIN": "Логин",
+    "PASSWORD": "Пароль",
+    "CAPTCHA": "Капча",
+    "BUTTON_SUBMIT": "Войти"
+  },
+  "LINK": {
+    "SIGNUP": "Создать аккаунт",
+    "FORGOT_PASSWORD": "Забыл пароль"
+  }
+}
