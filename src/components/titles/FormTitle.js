@@ -42,7 +42,8 @@ const Icon = styled.div`
   color: ${colors.textPrimary};
 `;
 const Title = styled.h2`
-  font-weight: 600;
-  font-size: 18px;
-  color: ${colors.textPrimary};
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  color: ${colors.textSecondary};
 `;

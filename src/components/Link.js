@@ -38,13 +38,12 @@ Link.propTypes = {
 const LinkStyled = styled(LinkUI)`
   && {
     cursor: pointer;
-    color: ${({ color }) => colors[color] || colors.textPrimary} !important;
-    opacity: 1 !important;
+    color: ${({ color }) => colors[color] || colors.textPrimary};
+    opacity: 1;
     transition: opacity ${sizes.transition.default};
 
     &:hover {
-      color: ${({ color }) => colors[color] || colors.textPrimary} !important;
-      opacity: ${sizes.opacity.hover} !important;
+      opacity: ${sizes.opacity.hover};
     }
   }
 `;

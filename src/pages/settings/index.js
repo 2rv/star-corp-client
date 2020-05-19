@@ -3,13 +3,7 @@ import React from 'react';
 import Head from '../_head';
 import { PAGE_TYPE } from '../../constants/meta';
 import { PageLayout, ContentLayout, SectionLayout, ResponsiveLayout } from '../../components/layouts';
-import {
-  SettingsAccountInfo,
-  SettingsUpdateEmail,
-  SettingsUpdatePassword,
-  SettingsUpdatePgp,
-  Logout,
-} from '../../containers';
+import { SettingsAccountInfo, SettingsUpdateEmail, SettingsUpdatePassword, Logout } from '../../containers';
 
 const SettingsPage = () => {
   return (
@@ -20,7 +14,6 @@ const SettingsPage = () => {
           <SectionLayout indent>
             <SettingsAccountInfo />
             <SettingsUpdatePassword />
-            <SettingsUpdatePgp />
             <SettingsUpdateEmail />
             <Logout />
           </SectionLayout>

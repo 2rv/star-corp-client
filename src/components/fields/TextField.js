@@ -22,6 +22,7 @@ const TextFieldComponent = ({ className, endAdornment, children, label, loading,
         }}
         label={label}
         variant="outlined"
+        color="secondary"
         className={className}
         {...props}
         disabled={loading || disabled}
@@ -63,11 +64,11 @@ const FieldStyled = styled(Field)`
   & input {
     height: 50px;
     padding: 0 14px;
-    color: ${colors.textPrimary};
-    -webkit-text-fill-color: ${colors.textPrimary};
+    color: ${colors.textSecondary};
+    -webkit-text-fill-color: ${colors.textSecondary};
   }
   & label {
-    color: ${colors.textGray};
+    color: ${colors.textSecondary};
   }
   & fieldset {
     transition: ${sizes.transition.field} !important;
@@ -76,8 +77,7 @@ const FieldStyled = styled(Field)`
   }
   &:hover {
     fieldset {
-      transition: ${sizes.transition.field} !important;
-      border-color: ${colors.textPrimary};
+      border-color: ${colors.grayLight} !important;
     }
   }
 `;
@@ -112,7 +112,11 @@ export const TextFieldPassword = ({ ...props }) => {
             onMouseDown={(e) => e.preventDefault()}
             edge="end"
           >
-            {showPassword ? <Visibility fontSize="small" /> : <VisibilityOff fontSize="small" />}
+            {showPassword ? (
+              <Visibility fontSize="small" style={{ color: colors.textSecondary }} />
+            ) : (
+              <VisibilityOff fontSize="small" style={{ color: colors.textSecondary }} />
+            )}
           </IconButton>
         </InputAdornment>
       }

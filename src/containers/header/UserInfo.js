@@ -18,7 +18,7 @@ export const UserInfo = ({ balance, onSelect }) => {
       <Actions>
         <IconButton size="small">
           <Badge variant="dot" color="primary" overlap="circle">
-            <NotificationsNoneIcon fontSize="medium" style={{ color: colors.textGray }} />
+            <NotificationsNoneIcon fontSize="medium" style={{ color: colors.textSecondary }} />
           </Badge>
         </IconButton>
       </Actions>
@@ -37,7 +37,7 @@ UserInfo.propTypes = {
 };
 
 const Actions = styled.div`
-  border-right: 1px solid ${colors.gray};
+  border-right: 1px solid ${colors.textSecondary};
   padding: 0 ${spacing(2)};
   margin-right: ${spacing(3)};
 `;
@@ -49,6 +49,7 @@ const Container = styled.div`
 `;
 
 const Balance = styled(Link)`
+  color: ${colors.textSecondary} !important;
   && {
     font-size: 14px;
     font-weight: 600;

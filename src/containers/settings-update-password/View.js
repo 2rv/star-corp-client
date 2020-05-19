@@ -37,19 +37,19 @@ export const UpdatePasswordView = ({ disabled, loading, error, errorMessage, suc
           </ButtonSubmit>
         </IndentLayout>
       </Box>
-      {error || success && (
-        <ErrorSection>
-          {success && <Alert type="success" tid="SETTINGS.UPDATE_PASSWORD.FORM.ALERT_SUCCESS" />}
-          {error && <Alert type="error" tid={`ERROR.${errorMessage}`} />}
-        </ErrorSection>
-      )}
-      
+      {error ||
+        (success && (
+          <ErrorSection>
+            {success && <Alert type="success" tid="SETTINGS.UPDATE_PASSWORD.FORM.ALERT_SUCCESS" />}
+            {error && <Alert type="error" tid={`ERROR.${errorMessage}`} />}
+          </ErrorSection>
+        ))}
     </React.Fragment>
   );
 };
 
 const ErrorSection = styled.div`
-  margin-top: ${spacing(3)};
+  margin-top: ${spacing(4)};
 `;
 
 UpdatePasswordView.propTypes = {

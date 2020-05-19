@@ -41,12 +41,7 @@ export const FixedBar = ({ children, ...props }) => {
   );
 };
 
-const StyledAppBar = styled(AppBar)`
-  && {
-    background-color: transparent;
-    box-shadow: none;
-  }
-`;
+const StyledAppBar = styled(AppBar)``;
 
 FixedBar.propTypes = {
   children: PropTypes.element.isRequired,

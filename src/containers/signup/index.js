@@ -9,8 +9,7 @@ import { SIGNUP } from '../../constants/fields';
 import { headerNavigatePath } from '../../actions/navigation';
 import { ROUTES } from '../../constants/routes';
 import { validate } from '../../validations/signup';
-import { signup, signupReset } from '../../actions/signup';
-import { generateCaptcha } from '../../actions/captcha';
+import { signup } from '../../actions/signup';
 
 import { SignupView } from './View';
 
@@ -18,16 +17,6 @@ class SingupContainer extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(headerNavigatePath(ROUTES.SIGNUP));
-  }
-
-  componentDidUpdate() {
-    const { dispatch, change, statusReset } = this.props;
-
-    if (statusReset) {
-      dispatch(signupReset(false));
-      dispatch(generateCaptcha());
-      dispatch(change(SIGNUP.CAPTCHA, ''));
-    }
   }
 
   signup = (form) => {
@@ -38,7 +27,6 @@ class SingupContainer extends Component {
         login: form[SIGNUP.LOGIN],
         nickname: form[SIGNUP.NICKNAME],
         password: form[SIGNUP.PASSWORD],
-        captcha: form[SIGNUP.CAPTCHA],
       }),
     );
   };
@@ -70,22 +58,19 @@ const signupForm = reduxForm({
   validate,
 });
 
-const mapStateToProps = ({ signup: { errorMessage, error, loading, reset } }) => ({
+const mapStateToProps = ({ signup: { errorMessage, error, loading } }) => ({
   statusError: error,
   errorMessage,
   loading,
-  statusReset: reset,
 });
 
 SingupContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  change: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   errorMessage: PropTypes.string,
   statusError: PropTypes.bool,
   valid: PropTypes.bool,
   loading: PropTypes.bool,
-  statusReset: PropTypes.bool,
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
 };

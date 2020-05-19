@@ -4,7 +4,6 @@ import { API } from '../constants/api';
 import { ROUTES } from '../constants/routes';
 import { SETTINGS_UPDATE_PASSWORD } from './index';
 import { convertSettingsUpdatePasswordData } from '../api/settings';
-import { setPgpConfirmData } from './pgpConfirm';
 
 const setFail = (message) => ({
   type: SETTINGS_UPDATE_PASSWORD.FAIL,
@@ -41,8 +40,7 @@ export const settingsUpdatePasswordWithConfirm = (payloadData) => {
     dispatch(setLoading());
 
     try {
-      const { data } = await httpRequest.post(API.UPDATE_PASSWORD_WITH_CONFIRM, payload);
-      dispatch(setPgpConfirmData({ encryptedKey: data.pgpEncryptedCode }));
+      await httpRequest.post(API.UPDATE_PASSWORD_WITH_CONFIRM, payload);
       await redirect(ROUTES.SETTINGS_CONFIRM);
     } catch ({ response: { data } }) {
       dispatch(setFail(data.message));

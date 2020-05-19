@@ -9,8 +9,7 @@ import { LOGIN } from '../../constants/fields';
 import { headerNavigatePath } from '../../actions/navigation';
 import { ROUTES } from '../../constants/routes';
 import { validate } from '../../validations/login';
-import { login, loginReset } from '../../actions/login';
-import { generateCaptcha } from '../../actions/captcha';
+import { login } from '../../actions/login';
 
 import { LoginView } from './View';
 
@@ -20,16 +19,6 @@ class LoginContainer extends Component {
     dispatch(headerNavigatePath(ROUTES.LOGIN));
   }
 
-  componentDidUpdate() {
-    const { dispatch, change, statusReset } = this.props;
-
-    if (statusReset) {
-      dispatch(loginReset(false));
-      dispatch(generateCaptcha());
-      dispatch(change(LOGIN.CAPTCHA, ''));
-    }
-  }
-
   login = (form) => {
     const { dispatch } = this.props;
 
@@ -37,7 +26,6 @@ class LoginContainer extends Component {
       login({
         login: form[LOGIN.LOGIN],
         password: form[LOGIN.PASSWORD],
-        captcha: form[LOGIN.CAPTCHA],
       }),
     );
   };
@@ -74,9 +62,7 @@ const mapStateToProps = ({ login: { errorMessage, error, reset, loading } }) => 
 LoginContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  change: PropTypes.func.isRequired,
   errorMessage: PropTypes.string,
-  statusReset: PropTypes.bool,
   statusError: PropTypes.bool,
   valid: PropTypes.bool,
   loading: PropTypes.bool,

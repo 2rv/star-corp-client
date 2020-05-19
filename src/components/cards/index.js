@@ -1,3 +1,11 @@
-import Paper from '@material-ui/core/Paper';
+import React from 'react';
+import styled from 'styled-components';
 
-export const Box = Paper;
+import Paper from '@material-ui/core/Paper';
+import { colors } from '../../theme';
+
+export const Box = ({ ...props }) => <StyledPaper {...props} />;
+
+const StyledPaper = styled(Paper)`
+  background-color: ${colors.dark} !important;
+`;

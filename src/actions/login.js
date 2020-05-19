@@ -20,11 +20,6 @@ const loginLoading = () => ({
   type: LOGIN.LOADING,
 });
 
-export const loginReset = (value) => ({
-  type: LOGIN.RESET,
-  reset: value,
-});
-
 export const logOut = () => {
   setAutorization(null);
   redirect(ROUTES.LOGIN, { local: false });
@@ -45,7 +40,6 @@ export const login = (actionData) => {
       })
       .catch(({ response: { data } }) => {
         dispatch(loginFail(data.message));
-        dispatch(loginReset(true));
       });
   };
 };

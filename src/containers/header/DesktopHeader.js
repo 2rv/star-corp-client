@@ -11,7 +11,7 @@ import {
   AUTH_MENU_ADDITIONAL,
   USER_NO_LOGGED_MENU,
 } from '../../constants/routes';
-import { sizes } from '../../theme';
+import { sizes, colors } from '../../theme';
 
 import { FixedBar } from './FixedBar';
 import { DesktopMenu } from './DesktopMenu';
@@ -82,9 +82,7 @@ export const DesktopHeader = ({ logged, activePath, typePath, loaded, user = {} 
   );
 };
 
-const Container = styled.div`
-  background-color: #fff;
-`;
+const Container = styled.div``;
 
 const Content = styled.div`
   display: flex;

@@ -3,12 +3,12 @@ import React from 'react';
 import Head from '../_head';
 
 import { PAGE_TYPE } from '../../constants/meta';
-import { PageLayout, ContentLayout, SectionLayout, ResponsiveLayout } from '../../components/layouts';
+import { AuthLayout, ContentLayout, SectionLayout, ResponsiveLayout } from '../../components/layouts';
 import { Signup } from '../../containers';
 
 export default () => {
   return (
-    <PageLayout align="center">
+    <AuthLayout align="center">
       <Head id={PAGE_TYPE.SIGNUP} />
       <ContentLayout>
         <ResponsiveLayout size="small">
@@ -17,6 +17,6 @@ export default () => {
           </SectionLayout>
         </ResponsiveLayout>
       </ContentLayout>
-    </PageLayout>
+    </AuthLayout>
   );
 };

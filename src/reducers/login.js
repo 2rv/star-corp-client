@@ -33,12 +33,6 @@ export default (state = initialState, action) => {
         errorMessage: action.message,
       };
 
-    case LOGIN.RESET:
-      return {
-        ...state,
-        reset: action.reset,
-      };
-
     default:
       return state;
   }

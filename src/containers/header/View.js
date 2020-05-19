@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { DesktopHeader } from './DesktopHeader';
 import { MobileHeader } from './MobileHeader';
+import { colors } from '../../theme';
 
 export const HeaderView = ({ ...props }) => {
   return (
@@ -18,7 +19,10 @@ export const HeaderView = ({ ...props }) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  background: ${colors.primary} !important;
+  box-shadow: 0 0 15px ${colors.primary} !important;
+`;
 
 const Mobile = styled.div`
   @media all and (min-width: 1200px) {

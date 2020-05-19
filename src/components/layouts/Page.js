@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { fade, sizes, colors } from '../../theme';
 import { APP_PAGE_ID } from '../../constants';
 
-export const PageLayout = ({ align = 'top', children }) => {
+export const PageLayout = ({ align = 'top', children, ...props }) => {
   return (
-    <Page align={align} id={APP_PAGE_ID}>
+    <Page align={align} id={APP_PAGE_ID} {...props}>
       {children}
     </Page>
   );
@@ -15,7 +15,6 @@ export const PageLayout = ({ align = 'top', children }) => {
 
 const Page = styled.div`
   animation: ${fade} 0.5s;
-
   position: relative;
   min-height: 100vh;
   width: 100%;

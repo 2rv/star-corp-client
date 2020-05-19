@@ -22,13 +22,13 @@ const themeUi = {
   ...createMuiTheme({
     palette: {
       primary: {
-        main: '#0059FF',
+        main: '#6100FF',
         light: '#E0EBFF',
         dark: '#3f19a5',
         contrastText: '#fff',
       },
       secondary: {
-        main: '#FF782D',
+        main: '#fff',
         light: '#ff9357',
         dark: '#b2541f',
         contrastText: '#fff',

@@ -1,9 +1,8 @@
 {
   "FORM": {
-    "TITLE": "Авторизация",
-    "LOGIN": "Логин",
+    "TITLE": "Войти",
+    "LOGIN": "Логин или почта",
     "PASSWORD": "Пароль",
-    "CAPTCHA": "Капча",
     "BUTTON_SUBMIT": "Войти"
   },
   "LINK": {

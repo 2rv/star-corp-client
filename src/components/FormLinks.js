@@ -10,7 +10,7 @@ export const FormLinks = ({ items }) => (
   <FooterBlock length={items.length}>
     {items.map(({ link, tid, tvalues }) => (
       <React.Fragment key={link}>
-        <Link href={link}>
+        <Link href={link} underline="never" color="textSecondary">
           <Text tid={tid} tvalues={tvalues} />
         </Link>
       </React.Fragment>
@@ -23,11 +23,10 @@ FormLinks.propTypes = {
 };
 
 const FooterBlock = styled.div`
-  background: #f4f8ff;
-  padding: ${spacing(3)} ${spacing(7)};
+  padding: ${spacing(4)} 0 0;
   width: 100%;
   display: flex;
   justify-content: ${({ length }) => (length > 1 ? 'space-between' : 'center')};
-  font-size: 16px;
-  color: ${colors.textPrimary};
+  font-size: 14px;
+  color: ${colors.textSecondary};
 `;

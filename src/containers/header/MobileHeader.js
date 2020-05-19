@@ -19,7 +19,7 @@ import { SkeletonMenu } from '../../components/skeletons';
 import { FixedBar } from './FixedBar';
 import { Drawer } from './Drawer';
 import { MobileMenu } from './MobileMenu';
-import { sizes } from '../../theme';
+import { sizes, colors } from '../../theme';
 
 import { UserInfo } from './UserInfo';
 import { UserIcon } from './UserIcon';
@@ -94,9 +94,7 @@ export const MobileHeader = ({ logged, typePath, activePath, loaded, user = {} }
   );
 };
 
-const Container = styled.div`
-  background-color: #fff;
-`;
+const Container = styled.div``;
 
 const Content = styled.div`
   display: flex;

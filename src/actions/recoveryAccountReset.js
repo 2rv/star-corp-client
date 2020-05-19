@@ -4,7 +4,6 @@ import { redirect } from '../utils/navigation';
 import { API } from '../constants/api';
 import { ROUTES } from '../constants/routes';
 import { RECOVERY_ACCOUNT_RESET } from './index';
-import { setPgpConfirmData } from './pgpConfirm';
 import { convertRecoveryAccountResetData } from '../api/recovery';
 
 const setFail = (message) => ({
@@ -31,9 +30,7 @@ export const sendRecoveryAccountReset = (payloadData) => {
     try {
       dispatch(setLoading());
 
-      const { data } = await httpRequest.post(API.RECOVERY_ACCOUNT_RESET, payloda);
-
-      dispatch(setPgpConfirmData({ encryptedKey: data.pgpEncryptedCode }));
+      await httpRequest.post(API.RECOVERY_ACCOUNT_RESET, payloda);
       dispatch(setSuccess());
 
       redirect(ROUTES.RECOVERY_ACCOUNT_CONFIRM);

@@ -56,5 +56,5 @@ UpdateEmailView.propTypes = {
 const ButtonSubmit = styled(ButtonPrimary)``;
 
 const ErrorSection = styled.div`
-  margin-top: ${spacing(3)};
+  margin-top: ${spacing(4)};
 `;

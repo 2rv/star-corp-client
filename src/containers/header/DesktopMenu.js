@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { Text, Link } from '../../components';
-import { spacing, colors } from '../../theme';
+import { spacing, colors, sizes } from '../../theme';
 
 export const DesktopMenu = ({ items, activePath }) => {
   return (
@@ -30,12 +30,20 @@ const Item = styled(Link)`
   && {
     padding: ${spacing(4)} 0;
     font-size: 16px;
+    color: ${colors.textSecondary} !important;
+    opacity: 0.9 !important;
+    transition: ${sizes.transition.default};
+    &:hover {
+      opacity: 1 !important;
+    }
     ${(p) =>
       p.active
         ? css`
-            color: ${colors.primary} !important;
+            opacity: 1 !important;
+            color: ${colors.textSecondary} !important;
             &&:hover {
-              color: ${colors.primary} !important;
+              opacity: 0.9 !important;
+              color: ${colors.textSecondary} !important;
             }
           `
         : ''}

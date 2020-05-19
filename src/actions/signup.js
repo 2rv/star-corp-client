@@ -20,11 +20,6 @@ const setLoading = () => ({
   type: SIGNUP.LOADING,
 });
 
-export const signupReset = (value) => ({
-  type: SIGNUP.RESET,
-  reset: value,
-});
-
 export const signup = (actionData) => {
   const payload = convertSignupData(actionData);
 
@@ -40,7 +35,6 @@ export const signup = (actionData) => {
       })
       .catch(({ response: { data } }) => {
         dispatch(setFail(data.message));
-        dispatch(signupReset(true));
       });
   };
 };
