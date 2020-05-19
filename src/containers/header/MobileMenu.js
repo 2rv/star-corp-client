@@ -32,7 +32,7 @@ export const MobileMenu = ({ items, activePath, onSelect }) => {
 };
 
 MobileMenu.propTypes = {
-  items: PropTypes.bool.isRequired,
+  items: PropTypes.array.isRequired,
   activePath: PropTypes.string.isRequired,
   onSelect: PropTypes.func.isRequired,
 };

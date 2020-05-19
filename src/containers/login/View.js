@@ -36,7 +36,7 @@ export const LoginView = ({ disabled, loading, error, errorMessage }) => {
           <FormLinks items={LOGIN_LINKS} />
           {error && (
             <ErrorSection>
-              <Alert type="error" tid={`ERROR.${errorMessage}`} />
+              <Alert type="error" tid={`ERROR.${errorMessage}`} variant="outlined" />
             </ErrorSection>
           )}
         </IndentLayout>

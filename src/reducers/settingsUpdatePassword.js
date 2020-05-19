@@ -24,6 +24,14 @@ export default (state = initialState, action) => {
         loading: true,
         success: false,
       };
+    case SETTINGS_UPDATE_PASSWORD.FAIL:
+      return {
+        ...state,
+        error: true,
+        loading: false,
+        errorMessage: action.message,
+        success: false,
+      };
 
     case SETTINGS_UPDATE_PASSWORD.CONFIRM:
       return {

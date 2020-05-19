@@ -6,6 +6,7 @@ export { Error } from './error';
 export { RouteHandler } from './route-handler';
 export { RecoveryAccountReset } from './recovery-account-reset';
 export { RecoveryAccountUpdate } from './recovery-account-update';
+export { RecoveryAccountConfirm } from './recovery-account-confirm';
 export { SettingsAccountInfo } from './settings-account-info';
 export { SettingsUpdatePassword } from './settings-update-password';
 export { SettingsUpdateEmail } from './settings-update-email';

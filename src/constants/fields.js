@@ -12,7 +12,11 @@ export const SIGNUP = {
 };
 
 export const RECOVERY_ACCOUNT_RESET = {
-  LOGIN: 'login',
+  EMAIL: 'email',
+};
+
+export const RECOVERY_ACCOUNT_CONFIRM = {
+  CODE: 'code',
 };
 
 export const RECOVERY_ACCOUNT_UPDATE = {
@@ -21,12 +25,13 @@ export const RECOVERY_ACCOUNT_UPDATE = {
 };
 
 export const SETTINGS_UPDATE_EMAIL = {
+  PASSWORD: 'password',
   EMAIL: 'email',
 };
 
 export const SETTINGS_UPDATE_PASSWORD = {
-  PASSWORD: 'password',
-  REPEAT_PASSWORD: 'repeatPassword',
+  CURRENT_PASSWORD: 'currentPassword',
+  NEW_PASSWORD: 'newPassword',
 };
 
 export const AUTH_USER = {

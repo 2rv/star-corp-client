@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Field } from 'redux-form';
 
-import RotateLeftIcon from '@material-ui/icons/RotateLeft';
-
 import { RECOVERY_ACCOUNT_RESET } from '../../constants/fields';
 import { TextField } from '../../components/fields';
 import { Text, Loader, Alert, FormLinks } from '../../components';
@@ -24,29 +22,28 @@ export const ACCOUNT_RECOVERY_LOGIN_LINKS = [
 export const RecoveryAccountResetView = ({ disabled, loading, error, errorMessage }) => {
   return (
     <React.Fragment>
+      {loading && <Loader />}
       <Box variant="outlined">
         <IndentLayout>
-          <FormTitle tid="RECOVERY.RESET.FORM.TITLE" icon={RotateLeftIcon} />
+          <FormTitle tid="RECOVERY.RESET.FORM.TITLE" />
           <FieldGrid>
             <Field
-              name={RECOVERY_ACCOUNT_RESET.LOGIN}
+              name={RECOVERY_ACCOUNT_RESET.EMAIL}
               component={TextField}
-              label={<Text tid="RECOVERY.RESET.FORM.LOGIN" />}
+              label={<Text tid="RECOVERY.RESET.FORM.EMAIL" />}
             />
           </FieldGrid>
           <ButtonSubmit size="large" variant="outlined" color="primary" disabled={disabled} type="submit">
             <Text tid="RECOVERY.RESET.FORM.BUTTON_SUBMIT" />
           </ButtonSubmit>
+          <FormLinks items={ACCOUNT_RECOVERY_LOGIN_LINKS} />
+          {error && (
+            <ErrorSection>
+              <Alert type="error" tid={`ERROR.${errorMessage}`} variant="outlined" />
+            </ErrorSection>
+          )}
         </IndentLayout>
-
-        <FormLinks items={ACCOUNT_RECOVERY_LOGIN_LINKS} />
-        {loading && <Loader />}
       </Box>
-      {error && (
-        <ErrorSection>
-          <Alert type="error" tid={`ERROR.${errorMessage}`} />
-        </ErrorSection>
-      )}
     </React.Fragment>
   );
 };

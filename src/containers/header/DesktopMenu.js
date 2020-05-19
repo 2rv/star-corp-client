@@ -31,7 +31,7 @@ const Item = styled(Link)`
     padding: ${spacing(4)} 0;
     font-size: 16px;
     color: ${colors.textSecondary} !important;
-    opacity: 0.9 !important;
+    opacity: 0.75 !important;
     transition: ${sizes.transition.default};
     &:hover {
       opacity: 1 !important;
@@ -41,10 +41,6 @@ const Item = styled(Link)`
         ? css`
             opacity: 1 !important;
             color: ${colors.textSecondary} !important;
-            &&:hover {
-              opacity: 0.9 !important;
-              color: ${colors.textSecondary} !important;
-            }
           `
         : ''}
 

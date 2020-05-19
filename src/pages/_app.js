@@ -33,9 +33,13 @@ const themeUi = {
         dark: '#b2541f',
         contrastText: '#fff',
       },
+      error: {
+        main: '#FF4545',
+        contrastText: '#fff',
+      },
     },
     typography: {
-      fontFamily: ['"Segoe UI"', 'sans-serif'].join(','),
+      fontFamily: ['"SF UI Display"', 'sans-serif'].join(','),
     },
   }),
 };

@@ -43,7 +43,7 @@ const Icon = styled.div`
 `;
 const Title = styled.h2`
   font-weight: bold;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 33px;
   color: ${colors.textSecondary};
 `;

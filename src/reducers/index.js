@@ -10,7 +10,6 @@ import settingsUpdateEmail from './settingsUpdateEmail';
 import recoveryAccountReset from './recoveryAccountReset';
 import recoveryAccountUpdate from './recoveryAccountUpdate';
 import accountInfo from './accountInfo';
-import accountBalance from './accountBalance';
 
 export default combineReducers({
   form,
@@ -23,5 +22,4 @@ export default combineReducers({
   recoveryAccountReset,
   recoveryAccountUpdate,
   accountInfo,
-  accountBalance,
 });

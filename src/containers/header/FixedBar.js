@@ -7,6 +7,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 
+import { colors } from '../../theme';
+
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -41,7 +43,10 @@ export const FixedBar = ({ children, ...props }) => {
   );
 };
 
-const StyledAppBar = styled(AppBar)``;
+const StyledAppBar = styled(AppBar)`
+  background: ${colors.darkLight} !important;
+  box-shadow: 0 0 15px ${colors.darkLight} !important;
+`;
 
 FixedBar.propTypes = {
   children: PropTypes.element.isRequired,

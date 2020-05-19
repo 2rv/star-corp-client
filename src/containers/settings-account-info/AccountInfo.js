@@ -6,7 +6,7 @@ import { ListGrid } from '../../components/grids';
 import { Text } from '../../components';
 import { colors } from '../../theme';
 
-export const AccountInfo = ({ nickname, email, id, login }) => {
+export const AccountInfo = ({ email, id, login }) => {
   return (
     <React.Fragment>
       <ListGrid>
@@ -28,15 +28,6 @@ export const AccountInfo = ({ nickname, email, id, login }) => {
             <Info>{login}</Info>
           </Field>
         )}
-        {nickname && (
-          <Field>
-            <Heading>
-              <Text tid="SETTINGS.ACCOUNT_INFO.NICKNAME" />
-              :&nbsp;
-            </Heading>
-            <Info>{nickname}</Info>
-          </Field>
-        )}
         {email && (
           <Field>
             <Heading>
@@ -54,7 +45,6 @@ export const AccountInfo = ({ nickname, email, id, login }) => {
 AccountInfo.propTypes = {
   id: PropTypes.number.isRequired,
   login: PropTypes.string.isRequired,
-  nickname: PropTypes.string.isRequired,
   email: PropTypes.string,
 };
 
@@ -67,11 +57,11 @@ const Heading = styled.span`
   font-size: 16px;
   line-height: 140%;
   font-weight: 600;
-  color: ${colors.textPrimary};
+  color: ${colors.textSecondary};
 `;
 
 const Info = styled.span`
   font-size: 16px;
   line-height: 140%;
-  color: ${colors.textPrimary};
+  color: ${colors.textSecondary};
 `;

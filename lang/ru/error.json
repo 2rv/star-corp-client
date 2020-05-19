@@ -11,5 +11,7 @@
   "AUTH_RESET_USER_HAVENT_PGP": "Этот пользователь не имеет PGP ключа",
   "AUTH_RESET_UNCORRECT_USER_PGP": "У этого пользователя установлен неправильный PGP ключ",
   "AUTH_RESET_BAD_CONFIRM_CODE": "Неправильный расшифрованный ключ",
-  "CAPTCHA_VALUE_IS_UNCORRECT": "Невалидная капча"
+  "AUTH_UNCORRECT_CURRENT_PASSWORD": "Неверный пароль",
+  "SETTINGS_NEW_EMAIL_IS_CURRENT": "Вы ввели текущую почту",
+  "COULDNT_FOUND_USER_BY_EMAIL_FOR_RESET": "Пользователь с данной почтой не найден"
 }

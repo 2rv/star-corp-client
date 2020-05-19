@@ -7,7 +7,7 @@ import { compose } from 'redux';
 import { FORM_NAMES } from '../../constants';
 import { validate } from '../../validations/settingsUpdatePassword';
 import { SETTINGS_UPDATE_PASSWORD } from '../../constants/fields';
-import { settingsUpdatePassword, settingsUpdatePasswordWithConfirm } from '../../actions/settingsUpdatePassword';
+import { settingsUpdatePassword } from '../../actions/settingsUpdatePassword';
 import { getData, isLoading } from '../../utils/store';
 
 import { UpdatePasswordView } from './View';
@@ -20,23 +20,15 @@ class SettingsUpdatePasswordContainer extends Component {
   };
 
   submitUpdatePassword = (form) => {
-    const { dispatch, accountInfo } = this.props;
+    const { dispatch } = this.props;
+    dispatch(
+      settingsUpdatePassword({
+        currentPassword: form[SETTINGS_UPDATE_PASSWORD.CURRENT_PASSWORD],
+        newPassword: form[SETTINGS_UPDATE_PASSWORD.NEW_PASSWORD],
+      }),
+    );
 
-    if (accountInfo.pgp) {
-      dispatch(
-        settingsUpdatePasswordWithConfirm({
-          password: form[SETTINGS_UPDATE_PASSWORD.PASSWORD],
-        }),
-      );
-      dispatch(reset(FORM_NAMES.SETTINGS_UPDATE_PASSWORD));
-    } else {
-      dispatch(
-        settingsUpdatePassword({
-          password: form[SETTINGS_UPDATE_PASSWORD.PASSWORD],
-        }),
-      );
-      dispatch(reset(FORM_NAMES.SETTINGS_UPDATE_PASSWORD));
-    }
+    dispatch(reset(FORM_NAMES.SETTINGS_UPDATE_PASSWORD));
   };
 
   render() {

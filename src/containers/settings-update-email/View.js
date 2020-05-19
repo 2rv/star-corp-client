@@ -4,7 +4,7 @@ import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
 
 import { SETTINGS_UPDATE_EMAIL } from '../../constants/fields';
-import { TextField } from '../../components/fields';
+import { TextField, TextFieldPassword } from '../../components/fields';
 import { Text, Loader, Alert } from '../../components';
 import { ButtonPrimary } from '../../components/buttons';
 import { FormTitle } from '../../components/titles';
@@ -22,6 +22,11 @@ export const UpdateEmailView = ({ disabled, loading, error, errorMessage, formLo
           <FormTitle tid="SETTINGS.UPDATE_EMAIL.FORM.TITLE" />
           <FieldGrid double>
             <Field
+              name={SETTINGS_UPDATE_EMAIL.PASSWORD}
+              component={TextFieldPassword}
+              label={<Text tid="SETTINGS.UPDATE_EMAIL.FORM.PASSWORD" />}
+            />
+            <Field
               loading={formLoading}
               name={SETTINGS_UPDATE_EMAIL.EMAIL}
               component={TextField}
@@ -31,15 +36,14 @@ export const UpdateEmailView = ({ disabled, loading, error, errorMessage, formLo
           <ButtonSubmit size="large" variant="outlined" color="primary" disabled={disabled} type="submit">
             <Text tid="SETTINGS.UPDATE_EMAIL.FORM.BUTTON_SUBMIT" />
           </ButtonSubmit>
+          {(error || success) && (
+            <ErrorSection>
+              {success && <Alert type="success" tid="SETTINGS.UPDATE_EMAIL.FORM.ALERT_SUCCESS" variant="outlined" />}
+              {error && <Alert type="error" tid={`ERROR.${errorMessage}`} variant="outlined" />}
+            </ErrorSection>
+          )}
         </IndentLayout>
       </Box>
-      {error ||
-        (success && (
-          <ErrorSection>
-            {success && <Alert type="success" tid="SETTINGS.UPDATE_EMAIL.FORM.ALERT_SUCCESS" />}
-            {error && <Alert type="error" tid={`ERROR.${errorMessage}`} />}
-          </ErrorSection>
-        ))}
     </React.Fragment>
   );
 };

@@ -26,6 +26,6 @@ const Container = styled.div`
 
 const Title = styled.h2`
   font-weight: 600;
-  font-size: 18px;
-  color: ${colors.textPrimary};
+  font-size: 24px;
+  color: ${colors.textSecondary};
 `;

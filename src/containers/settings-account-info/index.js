@@ -9,9 +9,9 @@ import { getData, isLoaded, isLoading } from '../../utils/store';
 
 export const SettingsAccountInfo = () => {
   const { data, isDataLoading, isDataLoaded, pageLoading } = useSelector((state) => ({
-    data: getData(state.accountInfo.data),
-    isDataLoading: isLoading(state.accountInfo.data),
-    isDataLoaded: isLoaded(state.accountInfo.data),
+    data: getData(state.accountInfo),
+    isDataLoading: isLoading(state.accountInfo),
+    isDataLoaded: isLoaded(state.accountInfo),
     pageLoading: state.navigation.pageLoading,
   }));
   const dispatch = useDispatch();

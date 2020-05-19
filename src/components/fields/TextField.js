@@ -111,6 +111,7 @@ export const TextFieldPassword = ({ ...props }) => {
             onClick={() => setShowPassword(!showPassword)}
             onMouseDown={(e) => e.preventDefault()}
             edge="end"
+            color="secondary"
           >
             {showPassword ? (
               <Visibility fontSize="small" style={{ color: colors.textSecondary }} />

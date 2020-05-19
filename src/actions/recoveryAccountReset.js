@@ -25,12 +25,11 @@ export const setRecoveryAccountResetData = (data) => ({
 });
 
 export const sendRecoveryAccountReset = (payloadData) => {
-  const payloda = convertRecoveryAccountResetData(payloadData);
+  const { email } = convertRecoveryAccountResetData(payloadData);
   return async (dispatch) => {
     try {
       dispatch(setLoading());
-
-      await httpRequest.post(API.RECOVERY_ACCOUNT_RESET, payloda);
+      await httpRequest.get(API.RECOVERY_ACCOUNT_RESET({ email }));
       dispatch(setSuccess());
 
       redirect(ROUTES.RECOVERY_ACCOUNT_CONFIRM);

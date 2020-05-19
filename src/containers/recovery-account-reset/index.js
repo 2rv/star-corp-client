@@ -30,7 +30,7 @@ class RecoveryAccountResetContainer extends Component {
 
     return dispatch(
       sendRecoveryAccountReset({
-        login: form[RECOVERY_ACCOUNT_RESET.LOGIN],
+        email: form[RECOVERY_ACCOUNT_RESET.EMAIL],
       }),
     );
   };

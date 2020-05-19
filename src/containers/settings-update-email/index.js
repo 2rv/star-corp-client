@@ -33,14 +33,19 @@ class SettingsUpdateEmailContainer extends Component {
     return !valid || pristine || submitting || loading;
   };
 
-  submitUpdateEmail = (form) => {
-    const { dispatch } = this.props;
+  submitUpdateEmail = async (form) => {
+    const { dispatch, initialize } = this.props;
 
-    return dispatch(
+    const { success } = await dispatch(
       settingsUpdateEmail({
+        password: form[SETTINGS_UPDATE_EMAIL.PASSWORD],
         email: form[SETTINGS_UPDATE_EMAIL.EMAIL],
       }),
     );
+    if (success) {
+      const { accountInfo } = this.props;
+      initialize({ [SETTINGS_UPDATE_EMAIL.PASSWORD]: '', [SETTINGS_UPDATE_EMAIL.EMAIL]: accountInfo.email });
+    }
   };
 
   render() {
@@ -76,9 +81,9 @@ const mapStateToProps = (state) => {
     errorMessage,
     loading,
     success,
-    accountInfo: getData(accountInfo.data),
-    accountInfoLoading: isLoading(accountInfo.data),
-    accountInfoLoaded: isLoaded(accountInfo.data),
+    accountInfo: getData(accountInfo),
+    accountInfoLoading: isLoading(accountInfo),
+    accountInfoLoaded: isLoaded(accountInfo),
   };
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -8,7 +8,7 @@ import { staticPath } from '../../utils/staticPath';
 import { headerNavigatePath } from '../../actions/navigation';
 
 export const ErrorContainer = ({ status, dispatch }) => {
-  React.useState(() => {
+  useState(() => {
     dispatch(headerNavigatePath(null));
   }, []);
 
@@ -31,26 +31,7 @@ export const ErrorContainer = ({ status, dispatch }) => {
     return `ERROR.PAGE.${errorTid}`;
   };
 
-  const getErrorIconSrc = () => {
-    let errorSrc;
-
-    switch (status) {
-      case 401: {
-        errorSrc = 'access-denied';
-        break;
-      }
-      case 404: {
-        errorSrc = 'not-found';
-        break;
-      }
-      default:
-        return null;
-    }
-
-    return staticPath(`/svg/${errorSrc}.svg`);
-  };
-
-  return <ErrorView errorIconSrc={getErrorIconSrc({ status })} errorTid={getErrorTid({ status })} />;
+  return <ErrorView status={status} errorTid={getErrorTid({ status })} />;
 };
 
 ErrorContainer.propTypes = {

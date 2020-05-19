@@ -23,13 +23,14 @@ export const settingsUpdateEmail = (payloadData) => {
 
   return async (dispatch) => {
     dispatch(setLoading());
-
     try {
-      const { data } = await httpRequest.patch(API.UPDATE_EMAIL, payload);
-      dispatch(setAccountInfoData(performSettingsUpdateEmailData(data)));
+      await httpRequest.patch(API.UPDATE_EMAIL, payload);
+      dispatch(setAccountInfoData(performSettingsUpdateEmailData({ email: payload.email })));
       dispatch(setSuccess());
+      return { success: true };
     } catch ({ response: { data } }) {
       dispatch(setFail(data.message));
+      return { success: false };
     }
   };
 };

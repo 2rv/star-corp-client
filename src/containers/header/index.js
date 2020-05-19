@@ -21,7 +21,7 @@ const mapStateToProps = ({ auth: { logged, user }, navigation: { activePath, typ
 HeaderContainer.propTypes = {
   logged: PropTypes.bool.isRequired,
   activePath: PropTypes.string.isRequired,
-  typePath: PropTypes.string.isRequired,
+  typePath: PropTypes.string,
   user: PropTypes.object.isRequired,
 };
 

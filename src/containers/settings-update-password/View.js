@@ -22,28 +22,27 @@ export const UpdatePasswordView = ({ disabled, loading, error, errorMessage, suc
           <FormTitle tid="SETTINGS.UPDATE_PASSWORD.FORM.TITLE" />
           <FieldGrid double>
             <Field
-              name={SETTINGS_UPDATE_PASSWORD.PASSWORD}
+              name={SETTINGS_UPDATE_PASSWORD.CURRENT_PASSWORD}
               component={TextFieldPassword}
-              label={<Text tid="SETTINGS.UPDATE_PASSWORD.FORM.PASSWORD" />}
+              label={<Text tid="SETTINGS.UPDATE_PASSWORD.FORM.CURRENT_PASSWORD" />}
             />
             <Field
-              name={SETTINGS_UPDATE_PASSWORD.REPEAT_PASSWORD}
+              name={SETTINGS_UPDATE_PASSWORD.NEW_PASSWORD}
               component={TextFieldPassword}
-              label={<Text tid="SETTINGS.UPDATE_PASSWORD.FORM.REPEAT_PASSWORD" />}
+              label={<Text tid="SETTINGS.UPDATE_PASSWORD.FORM.NEW_PASSWORD" />}
             />
           </FieldGrid>
           <ButtonSubmit size="large" variant="outlined" color="primary" disabled={disabled} type="submit">
             <Text tid="SETTINGS.UPDATE_PASSWORD.FORM.BUTTON_SUBMIT" />
           </ButtonSubmit>
+          {(error || success) && (
+            <ErrorSection>
+              {success && <Alert type="success" tid="SETTINGS.UPDATE_PASSWORD.FORM.ALERT_SUCCESS" variant="outlined" />}
+              {error && <Alert type="error" tid={`ERROR.${errorMessage}`} variant="outlined" />}
+            </ErrorSection>
+          )}
         </IndentLayout>
       </Box>
-      {error ||
-        (success && (
-          <ErrorSection>
-            {success && <Alert type="success" tid="SETTINGS.UPDATE_PASSWORD.FORM.ALERT_SUCCESS" />}
-            {error && <Alert type="error" tid={`ERROR.${errorMessage}`} />}
-          </ErrorSection>
-        ))}
     </React.Fragment>
   );
 };
@@ -61,9 +60,3 @@ UpdatePasswordView.propTypes = {
 };
 
 const ButtonSubmit = styled(ButtonPrimary)``;
-const FieldSection = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: ${spacing(4)} ${spacing(6)};
-  margin-bottom: ${spacing(4)};
-`;

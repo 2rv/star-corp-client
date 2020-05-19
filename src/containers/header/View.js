@@ -19,10 +19,7 @@ export const HeaderView = ({ ...props }) => {
   );
 };
 
-const Container = styled.div`
-  background: ${colors.primary} !important;
-  box-shadow: 0 0 15px ${colors.primary} !important;
-`;
+const Container = styled.div``;
 
 const Mobile = styled.div`
   @media all and (min-width: 1200px) {

@@ -42,7 +42,7 @@ export const MobileHeader = ({ logged, typePath, activePath, loaded, user = {} }
                       <React.Fragment>
                         <div>
                           <IconButton onClick={() => setActiveAppMenu(true)}>
-                            <MenuIcon />
+                            <MenuIcon style={{ color: colors.textSecondary }} />
                           </IconButton>
                         </div>
                         {logged === true ? (

@@ -16,8 +16,8 @@ export const UserInfo = ({ balance, onSelect }) => {
   return (
     <Container>
       <Actions>
-        <IconButton size="small">
-          <Badge variant="dot" color="primary" overlap="circle">
+        <IconButton size="small" color="secondary">
+          <Badge variant="dot" color="secondary" overlap="circle">
             <NotificationsNoneIcon fontSize="medium" style={{ color: colors.textSecondary }} />
           </Badge>
         </IconButton>

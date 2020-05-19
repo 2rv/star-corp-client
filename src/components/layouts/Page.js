@@ -22,8 +22,7 @@ const Page = styled.div`
   display: flex;
   justify-content: ${(p) => p.align};
   flex-direction: column;
-
-  padding: ${sizes.indent.header} 0;
+  padding: ${sizes.indent.header} 0 0;
 `;
 
 PageLayout.propTypes = {

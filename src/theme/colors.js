@@ -1,6 +1,7 @@
 export const colors = {
   primary: '#6100FF',
   dark: '#0a0a0a',
+  darkLight: '#212121',
   gray: '#2B2B2B',
   grayLight: '#727272',
   textGray: '#262626',
@@ -9,7 +10,7 @@ export const colors = {
   textPrimary: '#323A53',
   textSecondary: '#fff',
   secondary: '#FF782D',
-  background: '#0a0a0a',
+  background: '#000',
   error: '#FF4E4E',
   warn: 'orange',
   success: '#4caf50',
