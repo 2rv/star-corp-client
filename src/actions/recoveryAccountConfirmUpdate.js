@@ -30,7 +30,6 @@ export const sendRecoveryAccountConfirm = (payloadData) => {
     try {
       dispatch(setLoading());
       const { data } = await httpRequest.post(API.RECOVERY_ACCOUNT_CONFIRM_UPDATE({ code }), { password });
-      console.log(data);
       setAutorization(data.accessToken);
       redirect(ROUTES.HOME);
       dispatch(setSuccess());
