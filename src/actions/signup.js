@@ -30,8 +30,8 @@ export const signup = (actionData) => {
       .post(API.SIGNUP, payload)
       .then(({ data }) => {
         setAutorization(data.accessToken);
-        redirect(ROUTES.HOME);
         dispatch(setSuccess(data.accessToken));
+        redirect(ROUTES.HOME);
       })
       .catch(({ response: { data } }) => {
         dispatch(setFail(data.message));

@@ -20,4 +20,7 @@ IndentLayout.propTypes = {
 
 const Padding = styled.div`
   padding: ${({ size }) => sizes.indent[size] || sizes.indent.default};
+  @media screen and (max-width: 450px) {
+    padding: ${({ size }) => parseInt(sizes.indent[size]) / 2 || parseInt(sizes.indent.default) / 2}px;
+  }
 `;

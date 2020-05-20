@@ -9,7 +9,6 @@ export const ROUTES = {
   SIGNUP: '/signup',
   SETTINGS: '/settings',
   RECOVERY_ACCOUNT_RESET: '/recovery-account',
-  RECOVERY_ACCOUNT_UPDATE: '/recovery-account/update',
   RECOVERY_ACCOUNT_CONFIRM: '/recovery-account/confirm',
   PAYMENT: '/payment',
   SETTINGS_CONFIRM: '/settings/confirm',

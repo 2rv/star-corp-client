@@ -1,4 +1,4 @@
-import { httpRequest, setAuthorization } from '../utils/request';
+import { httpRequest, setAutorization } from '../utils/request';
 import { redirect } from '../utils/navigation';
 
 import { API } from '../constants/api';

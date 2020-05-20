@@ -16,7 +16,7 @@ import { FormTitle } from '../../components/titles';
 
 export const ACCOUNT_RECOVERY_CONFIRM_LINKS = [
   { tid: 'RECOVERY.RESET.LINK.LOGIN', link: ROUTES.LOGIN },
-  { tid: 'RECOVERY.CONFIRM.FORM.INCORRECT_EMAIL', link: ROUTES.SIGNUP },
+  { tid: 'RECOVERY.CONFIRM.FORM.INCORRECT_EMAIL', link: ROUTES.RECOVERY_ACCOUNT_RESET },
 ];
 
 export const RecoveryAccountConfirmUpdateView = ({ email, disabled, loading, error, errorMessage }) => {
