@@ -1,8 +1,7 @@
 import { SIGNUP } from '../constants/fields';
 
-export const convertSignupData = ({ login, password, nickname, captcha }) => ({
+export const convertSignupData = ({ login, email, password }) => ({
   [SIGNUP.LOGIN]: login,
-  [SIGNUP.NICKNAME]: nickname,
+  [SIGNUP.EMAIL]: email,
   [SIGNUP.PASSWORD]: password,
-  [SIGNUP.CAPTCHA]: captcha,
 });

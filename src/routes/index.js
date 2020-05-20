@@ -2,7 +2,7 @@ import { ROUTES } from '../constants/routes';
 
 import initRouter from './router';
 
-import { privated, auth, accountRecoveryConfirm, accountRecoveryUpdate } from './redirects';
+import { privated, auth, accountRecoveryConfirm } from './redirects';
 
 const routeSwitch = initRouter({
   [ROUTES.HOME]: [],
@@ -12,7 +12,6 @@ const routeSwitch = initRouter({
   [ROUTES.SETTINGS]: [privated],
   [ROUTES.RECOVERY_ACCOUNT_RESET]: [auth],
   [ROUTES.RECOVERY_ACCOUNT_CONFIRM]: [auth, accountRecoveryConfirm],
-  [ROUTES.RECOVERY_ACCOUNT_UPDATE]: [auth, accountRecoveryUpdate],
 });
 
 export default async (ctx) => {

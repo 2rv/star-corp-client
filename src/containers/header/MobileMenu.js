@@ -1,11 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import ListItemUI from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { Text } from '../../components';
+import { colors } from '../../theme';
 import { linkRedirect } from '../../utils/navigation';
 
 export const MobileMenu = ({ items, activePath, onSelect }) => {
@@ -30,6 +32,16 @@ export const MobileMenu = ({ items, activePath, onSelect }) => {
     </List>
   );
 };
+
+const ListItem = styled(ListItemUI)`
+  &,
+  &:hover {
+    color: ${colors.textSecondary} !important;
+  }
+  &:hover {
+    background-color: ${colors.gray} !important;
+  }
+`;
 
 MobileMenu.propTypes = {
   items: PropTypes.array.isRequired,

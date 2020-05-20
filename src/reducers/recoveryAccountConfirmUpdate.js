@@ -1,14 +1,17 @@
-import { RECOVERY_ACCOUNT_UPDATE } from '../actions';
+import { RECOVERY_ACCOUNT_CONFIRM_UPDATE } from '../actions';
 
 const initialState = {
   error: null,
   errorMessage: null,
   loading: null,
+  data: {
+    email: null,
+  },
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case RECOVERY_ACCOUNT_UPDATE.SUCCESS:
+    case RECOVERY_ACCOUNT_CONFIRM_UPDATE.SUCCESS:
       return {
         ...state,
         loading: false,
@@ -16,18 +19,26 @@ export default (state = initialState, action) => {
         errorMessage: null,
       };
 
-    case RECOVERY_ACCOUNT_UPDATE.LOADING:
+    case RECOVERY_ACCOUNT_CONFIRM_UPDATE.LOADING:
       return {
         ...state,
         loading: true,
       };
 
-    case RECOVERY_ACCOUNT_UPDATE.FAIL:
+    case RECOVERY_ACCOUNT_CONFIRM_UPDATE.FAIL:
       return {
         ...state,
         error: true,
         loading: false,
         errorMessage: action.message,
+      };
+    case RECOVERY_ACCOUNT_CONFIRM_UPDATE.SET_DATA:
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          ...action.data,
+        },
       };
 
     default:

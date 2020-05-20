@@ -25,7 +25,7 @@ class SingupContainer extends Component {
     return dispatch(
       signup({
         login: form[SIGNUP.LOGIN],
-        nickname: form[SIGNUP.NICKNAME],
+        email: form[SIGNUP.EMAIL],
         password: form[SIGNUP.PASSWORD],
       }),
     );

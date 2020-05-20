@@ -13,5 +13,6 @@
   "AUTH_RESET_BAD_CONFIRM_CODE": "Неправильный расшифрованный ключ",
   "AUTH_UNCORRECT_CURRENT_PASSWORD": "Неверный пароль",
   "SETTINGS_NEW_EMAIL_IS_CURRENT": "Вы ввели текущую почту",
-  "COULDNT_FOUND_USER_BY_EMAIL_FOR_RESET": "Пользователь с данной почтой не найден"
+  "COULDNT_FOUND_USER_BY_EMAIL_FOR_RESET": "Пользователь с данной почтой не найден",
+  "AUTH_BAD_CONFIRM_CODE": "Неверный код подтверждения"
 }

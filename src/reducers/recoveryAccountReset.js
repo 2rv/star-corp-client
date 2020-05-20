@@ -4,9 +4,6 @@ const initialState = {
   error: null,
   errorMessage: null,
   loading: null,
-  data: {
-    login: null,
-  },
 };
 
 export default (state = initialState, action) => {

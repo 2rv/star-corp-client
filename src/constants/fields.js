@@ -8,18 +8,14 @@ export const SIGNUP = {
   EMAIL: 'email',
   PASSWORD: 'password',
   PASSWORD_REPEAT: 'passwordRepeat',
-  PRIVACY: 'privacy',
 };
 
 export const RECOVERY_ACCOUNT_RESET = {
   EMAIL: 'email',
 };
 
-export const RECOVERY_ACCOUNT_CONFIRM = {
+export const RECOVERY_ACCOUNT_CONFIRM_UPDATE = {
   CODE: 'code',
-};
-
-export const RECOVERY_ACCOUNT_UPDATE = {
   PASSWORD: 'password',
   REPEAT_PASSWORD: 'repeatPassword',
 };

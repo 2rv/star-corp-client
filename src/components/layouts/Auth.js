@@ -34,7 +34,7 @@ AuthLayout.propTypes = {
 const Container = styled(PageLayout)`
   background-image: url(${staticPath('/png/main-bg.png')});
   background-color: ${colors.background};
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 `;

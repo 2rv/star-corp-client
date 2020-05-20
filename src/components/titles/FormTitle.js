@@ -6,7 +6,7 @@ import { Text } from '../index';
 import { colors, spacing } from '../../theme';
 import { staticPath } from '../../utils/staticPath';
 
-export const FormTitle = ({ icon: IconComponent, iconSrc, tid, offset = 5 }) => (
+export const FormTitle = ({ icon: IconComponent, iconSrc, tid, offset = 6 }) => (
   <Container offset={offset}>
     {IconComponent && (
       <Icon>{iconSrc ? <img src={staticPath(iconSrc)} alt="" /> : <IconComponent color="inherit" />}</Icon>

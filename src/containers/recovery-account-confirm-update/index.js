@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import { compose } from 'redux';
 
-import { RECOVERY_ACCOUNT_CONFIRM } from '../../constants/fields';
+import { RECOVERY_ACCOUNT_CONFIRM_UPDATE } from '../../constants/fields';
 import { FORM_NAMES } from '../../constants';
 import { headerNavigatePath } from '../../actions/navigation';
 import { ROUTES } from '../../constants/routes';
-import { validate } from '../../validations/recoveryAccountReset';
-import { sendRecoveryAccountReset } from '../../actions/recoveryAccountReset';
+import { validate } from '../../validations/recoveryAccountConfirm';
+import { sendRecoveryAccountConfirm } from '../../actions/recoveryAccountConfirmUpdate';
 
-import { RecoveryAccountConfirmView } from './View';
+import { RecoveryAccountConfirmUpdateView } from './View';
 
-class RecoveryAccountConfirmContainer extends Component {
+class RecoveryAccountConfirmUpdateContainer extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(headerNavigatePath(ROUTES.RECOVERY_ACCOUNT_CONFIRM));
@@ -29,21 +29,23 @@ class RecoveryAccountConfirmContainer extends Component {
     const { dispatch } = this.props;
 
     return dispatch(
-      sendRecoveryAccountReset({
-        code: form[RECOVERY_ACCOUNT_CONFIRM.CODE],
+      sendRecoveryAccountConfirm({
+        code: form[RECOVERY_ACCOUNT_CONFIRM_UPDATE.CODE],
+        password: form[RECOVERY_ACCOUNT_CONFIRM_UPDATE.PASSWORD],
       }),
     );
   };
 
   render() {
-    const { loading, handleSubmit, errorMessage, statusError } = this.props;
+    const { loading, handleSubmit, errorMessage, statusError, email } = this.props;
 
     return (
       <form onSubmit={handleSubmit((form) => this.reset(form))}>
-        <RecoveryAccountConfirmView
+        <RecoveryAccountConfirmUpdateView
           loading={loading}
           errorMessage={errorMessage}
           error={statusError}
+          email={email}
           disabled={this.isFormDisabled()}
         />
       </form>
@@ -52,17 +54,25 @@ class RecoveryAccountConfirmContainer extends Component {
 }
 
 const ReduxForm = reduxForm({
-  form: FORM_NAMES.RECOVERY_ACCOUNT_CONFIRM,
+  form: FORM_NAMES.RECOVERY_ACCOUNT_CONFIRM_UPDATE,
   validate,
 });
 
-const mapStateToProps = ({ recoveryAccountReset: { errorMessage, error, loading } }) => ({
+const mapStateToProps = ({
+  recoveryAccountConfirmUpdate: {
+    errorMessage,
+    error,
+    loading,
+    data: { email },
+  },
+}) => ({
   statusError: error,
   errorMessage,
   loading,
+  email,
 });
 
-RecoveryAccountConfirmContainer.propTypes = {
+RecoveryAccountConfirmUpdateContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   errorMessage: PropTypes.string,
@@ -71,6 +81,10 @@ RecoveryAccountConfirmContainer.propTypes = {
   loading: PropTypes.bool,
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
+  email: PropTypes.string,
 };
 
-export const RecoveryAccountConfirm = compose(connect(mapStateToProps), ReduxForm)(RecoveryAccountConfirmContainer);
+export const RecoveryAccountConfirmUpdate = compose(
+  connect(mapStateToProps),
+  ReduxForm,
+)(RecoveryAccountConfirmUpdateContainer);

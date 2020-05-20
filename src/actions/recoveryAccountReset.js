@@ -4,7 +4,8 @@ import { redirect } from '../utils/navigation';
 import { API } from '../constants/api';
 import { ROUTES } from '../constants/routes';
 import { RECOVERY_ACCOUNT_RESET } from './index';
-import { convertRecoveryAccountResetData } from '../api/recovery';
+import { convertRecoveryAccountResetData, performRecoveryAccountConfirmUpdateData } from '../api/recovery';
+import { setRecoveryAccountConfirmUpdateData } from './recoveryAccountConfirmUpdate';
 
 const setFail = (message) => ({
   type: RECOVERY_ACCOUNT_RESET.FAIL,
@@ -31,7 +32,7 @@ export const sendRecoveryAccountReset = (payloadData) => {
       dispatch(setLoading());
       await httpRequest.get(API.RECOVERY_ACCOUNT_RESET({ email }));
       dispatch(setSuccess());
-
+      dispatch(setRecoveryAccountConfirmUpdateData(performRecoveryAccountConfirmUpdateData({ email })));
       redirect(ROUTES.RECOVERY_ACCOUNT_CONFIRM);
     } catch ({ response: { data } }) {
       dispatch(setFail(data.message));

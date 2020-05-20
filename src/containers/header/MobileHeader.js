@@ -41,8 +41,8 @@ export const MobileHeader = ({ logged, typePath, activePath, loaded, user = {} }
                     {typePath === 'app' && (
                       <React.Fragment>
                         <div>
-                          <IconButton onClick={() => setActiveAppMenu(true)}>
-                            <MenuIcon style={{ color: colors.textSecondary }} />
+                          <IconButton color="secondary" onClick={() => setActiveAppMenu(true)}>
+                            <MenuIcon />
                           </IconButton>
                         </div>
                         {logged === true ? (
@@ -55,7 +55,7 @@ export const MobileHeader = ({ logged, typePath, activePath, loaded, user = {} }
                     {typePath === 'auth' && (
                       <React.Fragment>
                         <div>
-                          <IconButton onClick={() => setActiveAppMenu(true)}>
+                          <IconButton color="secondary" onClick={() => setActiveAppMenu(true)}>
                             <MenuIcon />
                           </IconButton>
                         </div>

@@ -8,7 +8,7 @@ import signup from './signup';
 import settingsUpdatePassword from './settingsUpdatePassword';
 import settingsUpdateEmail from './settingsUpdateEmail';
 import recoveryAccountReset from './recoveryAccountReset';
-import recoveryAccountUpdate from './recoveryAccountUpdate';
+import recoveryAccountConfirmUpdate from './recoveryAccountConfirmUpdate';
 import accountInfo from './accountInfo';
 
 export default combineReducers({
@@ -20,6 +20,6 @@ export default combineReducers({
   settingsUpdatePassword,
   settingsUpdateEmail,
   recoveryAccountReset,
-  recoveryAccountUpdate,
+  recoveryAccountConfirmUpdate,
   accountInfo,
 });
