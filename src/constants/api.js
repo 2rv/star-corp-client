@@ -9,4 +9,5 @@ export const API = {
   UPDATE_EMAIL: '/auth/settings/email',
   ACCOUNT_INFO: '/auth/account-info',
   ACCOUNT_BALANCE: '/payment/balance',
+  REPORT: '/',
 };

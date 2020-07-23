@@ -50,6 +50,7 @@ const FieldStyled = styled(Field)`
   ${({ multiline }) =>
     !multiline &&
     `
+    
 .MuiInputLabel-outlined {
     transform: translate(14px, 17px) scale(1) !important;
   }
@@ -60,6 +61,7 @@ const FieldStyled = styled(Field)`
 
   && {
     width: 100%;
+    color: ${colors.textSecondary};
   }
   & input {
     height: 50px;
@@ -80,6 +82,10 @@ const FieldStyled = styled(Field)`
       border-color: ${colors.grayLight} !important;
     }
   }
+  & textarea {
+    color: ${colors.textSecondary};
+    -webkit-text-fill-color: ${colors.textSecondary};
+  }
 `;
 
 TextFieldComponent.propTypes = {
@@ -94,7 +100,7 @@ TextFieldComponent.propTypes = {
 export const TextField = createComponent(TextFieldComponent, ({ defaultValue, ...props }) => mapError(props));
 
 export const TextAreaField = ({ ...props }) => {
-  return <TextField multiline rowsMax={6} {...props} />;
+  return <TextField style={{ color: '#fff' }} multiline rows={4} rowsMax={6} {...props} />;
 };
 TextAreaField.propTypes = {};
 
