@@ -75,7 +75,6 @@ ReportContainer.propTypes = {
   submitting: PropTypes.bool,
   pristine: PropTypes.bool,
   success: PropTypes.bool,
-  accountInfoLoading: PropTypes.bool,
 };
 
 export const Report = compose(connect(mapStateToProps), reportForm)(ReportContainer);

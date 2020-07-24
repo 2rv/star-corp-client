@@ -40,6 +40,10 @@
     "TITLE": "Настройки",
     "DESCRIPTION": "Настройки аккаунта"
   },
+  "REPORT": {
+    "TITLE": "Форма жалобы",
+    "DESCRIPTION": "Жалоба на игрока"
+  },
   "ERROR": {
     "TITLE": "Упс... Ошибка!",
     "DESCRIPTION": ""
