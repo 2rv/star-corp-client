@@ -10,3 +10,5 @@ export { SettingsAccountInfo } from './settings-account-info';
 export { SettingsUpdatePassword } from './settings-update-password';
 export { SettingsUpdateEmail } from './settings-update-email';
 export { Report } from './report';
+export { Balance } from './balance';
+export { Payment } from './payment';

@@ -8,6 +8,7 @@ export const API = {
   CONFIRM_PASSWORD_UPDATE: ({ key }) => `/auth/settings/password/confirm/${key}`,
   UPDATE_EMAIL: '/auth/settings/email',
   ACCOUNT_INFO: '/auth/account-info',
-  ACCOUNT_BALANCE: '/payment/balance',
+  ACCOUNT_BALANCE: '/balance/account',
   REPORT: '/',
+  PAYMENT: '/',
 };

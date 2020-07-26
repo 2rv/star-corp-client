@@ -6,13 +6,13 @@ import { Text } from '../index';
 import { colors, spacing } from '../../theme';
 import { staticPath } from '../../utils/staticPath';
 
-export const FormTitle = ({ icon: IconComponent, iconSrc, tid, offset = 6 }) => (
+export const FormTitle = ({ icon: IconComponent, iconSrc, tid, values, offset = 6 }) => (
   <Container offset={offset}>
     {IconComponent && (
       <Icon>{iconSrc ? <img src={staticPath(iconSrc)} alt="" /> : <IconComponent color="inherit" />}</Icon>
     )}
     <Title>
-      <Text tid={tid} />
+      <Text values={values} tid={tid} />
     </Title>
   </Container>
 );
@@ -20,6 +20,7 @@ export const FormTitle = ({ icon: IconComponent, iconSrc, tid, offset = 6 }) => 
 FormTitle.propTypes = {
   iconSrc: PropTypes.string,
   icon: PropTypes.object,
+  values: PropTypes.object,
   tid: PropTypes.string.isRequired,
   offset: PropTypes.number,
 };

@@ -1,0 +1,10 @@
+{
+  "CREATE_FORM": {
+    "BALANCE": "Ваш баланс: {{balance}}",
+    "TITLE": "Пополнение баланса",
+    "VALUE": "Сумма пополнения",
+    "BUTTON": "Пополнить баланс",
+    "INFORMATION": "Информацию про алгоритм пополнения : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus tincidunt eu, ultricies est ut. Scelerisque lobortis velit elit rhoncus.",
+    "ALERT_SUCCESS": "Баланс пополнен успешно"
+  }
+}

@@ -10,6 +10,7 @@ import recovery from './recovery.json';
 import settings from './settings.json';
 import common from './common.json';
 import report from './report.json';
+import payment from './payment.json';
 
 export default {
   translation: {
@@ -25,5 +26,6 @@ export default {
     SETTINGS: settings,
     COMMON: common,
     REPORT: report,
+    PAYMENT: payment,
   },
 };

@@ -6,6 +6,7 @@ export const FieldGrid = styled.div`
   display: grid;
   grid-gap: ${spacing(4)};
   grid-template-columns: ${(p) => (p.double ? '1fr 1fr' : '1fr')};
+  grid-template-columns: ${(e) => (e.fourthpart ? 'auto 200px' : '1fr')};
 
   @media all and (max-width: 1199px) {
     grid-template-columns: 1fr;

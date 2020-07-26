@@ -11,6 +11,8 @@ import recoveryAccountReset from './recoveryAccountReset';
 import recoveryAccountConfirmUpdate from './recoveryAccountConfirmUpdate';
 import accountInfo from './accountInfo';
 import report from './report';
+import balance from './balance';
+import payment from './payment';
 
 export default combineReducers({
   form,
@@ -24,4 +26,6 @@ export default combineReducers({
   recoveryAccountConfirmUpdate,
   accountInfo,
   report,
+  balance,
+  payment,
 });

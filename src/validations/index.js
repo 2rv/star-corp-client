@@ -126,3 +126,31 @@ export const emailRepeat = (field) => (value, values) => {
 
   return null;
 };
+
+export const minNumber = (min) => (value) => {
+  const val = Number(value);
+
+  if (isNaN(val)) {
+    return getError('VALIDATION.VALUE_IS_NUMBER');
+  }
+
+  if (val < min) {
+    return getError('VALIDATION.MIN_NUMBER', { min });
+  }
+
+  return null;
+};
+
+export const maxNumber = (max) => (value) => {
+  const val = Number(value);
+
+  if (isNaN(val)) {
+    return getError('VALIDATION.VALUE_IS_NUMBER');
+  }
+
+  if (val > max) {
+    return getError('VALIDATION.MAX_NUMBER', { max });
+  }
+
+  return null;
+};

@@ -30,6 +30,14 @@ export const REPORT = {
   DESCRIPTION: 'description',
 };
 
+export const ACCOUNT_BALANCE = {
+  AMOUNT: 'amount',
+};
+
+export const PAYMENT = {
+  PAYMENT_VALUE: 'value',
+};
+
 export const SETTINGS_UPDATE_PASSWORD = {
   CURRENT_PASSWORD: 'currentPassword',
   NEW_PASSWORD: 'newPassword',
