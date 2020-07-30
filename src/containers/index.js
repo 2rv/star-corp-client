@@ -12,3 +12,4 @@ export { SettingsUpdateEmail } from './settings-update-email';
 export { Report } from './report';
 export { Balance } from './balance';
 export { Payment } from './payment';
+export { ProfileInfo } from './profile-info';

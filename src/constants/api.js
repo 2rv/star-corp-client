@@ -11,4 +11,5 @@ export const API = {
   ACCOUNT_BALANCE: '/balance/account',
   REPORT: '/',
   PAYMENT: '/',
+  PROFILE_INFO: '/',
 };

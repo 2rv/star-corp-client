@@ -11,6 +11,7 @@ import settings from './settings.json';
 import common from './common.json';
 import report from './report.json';
 import payment from './payment.json';
+import profile from './profile.json';
 
 export default {
   translation: {
@@ -27,5 +28,6 @@ export default {
     COMMON: common,
     REPORT: report,
     PAYMENT: payment,
+    PROFILE: profile,
   },
 };

@@ -13,6 +13,7 @@ import accountInfo from './accountInfo';
 import report from './report';
 import balance from './balance';
 import payment from './payment';
+import userProfile from './userProfile';
 
 export default combineReducers({
   form,
@@ -28,4 +29,5 @@ export default combineReducers({
   report,
   balance,
   payment,
+  userProfile,
 });
