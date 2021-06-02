@@ -9,3 +9,4 @@ export { RecoveryAccountConfirmUpdate } from './recovery-account-confirm-update'
 export { SettingsAccountInfo } from './settings-account-info';
 export { SettingsUpdatePassword } from './settings-update-password';
 export { SettingsUpdateEmail } from './settings-update-email';
+export { Report } from './report';

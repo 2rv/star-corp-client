@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { spacing } from '../../theme';
 
 export const FieldGrid = styled.div`
-  margin-bottom: ${spacing(4)};
+  margin-bottom: ${({ offset = true }) => offset && spacing(4)};
   display: grid;
   grid-gap: ${spacing(4)};
   grid-template-columns: ${(p) => (p.double ? '1fr 1fr' : '1fr')};

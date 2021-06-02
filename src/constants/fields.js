@@ -25,6 +25,11 @@ export const SETTINGS_UPDATE_EMAIL = {
   EMAIL: 'email',
 };
 
+export const REPORT = {
+  NICKNAME: 'nickname',
+  DESCRIPTION: 'description',
+};
+
 export const SETTINGS_UPDATE_PASSWORD = {
   CURRENT_PASSWORD: 'currentPassword',
   NEW_PASSWORD: 'newPassword',

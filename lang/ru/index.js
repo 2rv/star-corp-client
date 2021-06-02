@@ -9,6 +9,7 @@ import signup from './signup.json';
 import recovery from './recovery.json';
 import settings from './settings.json';
 import common from './common.json';
+import report from './report.json';
 
 export default {
   translation: {
@@ -23,5 +24,6 @@ export default {
     RECOVERY: recovery,
     SETTINGS: settings,
     COMMON: common,
+    REPORT: report,
   },
 };
